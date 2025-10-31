@@ -14,18 +14,24 @@ fun main() {
     // Create a list of Music
     val musicList: List<Music> = listOf(single, album)
 
-    // Call interface methods using forEach
+    // Loop through each item of Music and display details
     musicList.forEach { music ->
         println("Total playing time: ${music.getPlayingTime()} seconds")
         println("All songs:")
-        music.getAllSongs().forEach { song ->
-            println(" - ${song.title} by ${song.artist}")
+        if (music is Single) {
+            music.allPlayingTime().forEach { song ->
+                println(" - ${song.title} by ${song.artist}")
+            }
+        } else if (music is Album) {
+            music.allPlayingTime().forEach { song ->
+                println(" - ${song.title} by ${song.artist}")
+            }
         }
         println()
     }
 
-    // Example of using songsByArtist on the album
-    val artist1Songs = album.songsByArtist("Artist 1")
-    println("Songs by Artist 1 in album:")
+    // Test the findSongsByArtist() method
+    val artist1Songs = album.findSongsByArtist("Artist 1")
+    println("Songs found using findSongsByArtist(\"Artist 1\"):")
     artist1Songs.forEach { println(" - ${it.title}") }
 }
