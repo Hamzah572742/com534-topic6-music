@@ -11,6 +11,11 @@ fun main() {
     // Create an Album
     val album = Album(listOf(song1, song2, song3, song4))
 
+    val recordPlayer = RecordPlayer()
+
+    recordPlayer.play(single)
+    recordPlayer.play(album)
+
     // Create a list of Music
     val musicList: List<Music> = listOf(single, album)
 

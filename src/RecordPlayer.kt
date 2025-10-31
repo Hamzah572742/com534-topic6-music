@@ -1,4 +1,4 @@
-class RecordPlayer {
+class RecordPlayer() {
 
     fun play(music: Music) {
         println("Now playing...")
@@ -8,7 +8,7 @@ class RecordPlayer {
 
         // Show all songs
         println("Songs:")
-        music.getAllSongs().forEach { song ->
+        music.allPlayingTime().forEach { song ->
             println(" - ${song.title} by ${song.artist} (${song.playingTime} seconds)")
         }
 
