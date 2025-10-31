@@ -3,14 +3,14 @@ class Album(val songs: List<Song>):Music {
         return songs.filter { it.title == searchArtist }
     }
 
-    fun getPlayingTime(): Double {
+    override fun getPlayingTime(): Double {
             return songs.sumOf { it.playingTime }
 
         }
 
 
 
-        fun allPlayingTime(): List<Song> {
+        override fun allPlayingTime(): List<Song> {
             return songs
         }
     }
